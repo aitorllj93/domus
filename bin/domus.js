@@ -9,7 +9,10 @@ program.name("domus").description(pkg.description).version(pkg.version);
 program
   .command("setup", { isDefault: true })
   .description("Setup Domus")
+  .option("--base-url <url>", "Domus base url")
+  .option("-a, --apps <names>", "Apps to install")
+  .option("-m, --mount-dir <dir>", "Mount directory")
   .action(setup);
 // program.command("install").description("Install Domus App").action(install);
 
-program.parse(process.argv);
+program.parse();
