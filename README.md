@@ -57,3 +57,30 @@ Then, you can run the setup with:
 ```sh
 domus
 ```
+
+## Specification
+
+Domus encourages some patterns found in other similar projects such as [CasaOS](https://github.com/IceWhaleTech/CasaOS) to make the setup and integrations as easy as possible.
+
+### Docker Compose
+
+The docker-compose files are located in the `portainer/templates` folder. Each service has its own folder with the `docker-compose.yml` file and optionally a `data` folder for the persistent data.
+
+#### docker-compose.yml
+
+The docker-compose file is a standard docker-compose file with some extra features under the `x-domus` keys.
+
+### Volumes
+
+#### Config & Databases
+
+All the volumes are mounted under the `/DATA` folder in the host machine. Config and databases are stored in the `/DATA/AppData` folder, with the name of the service as the folder name.
+
+#### Media
+
+Media is stored in the `/DATA/Media` folder, and structured based on the type of media.
+
+- `/DATA/Media/Books`
+- `/DATA/Media/Movies`
+- `/DATA/Media/Music`
+- `/DATA/Media/TV Shows`
