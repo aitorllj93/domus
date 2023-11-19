@@ -1,5 +1,7 @@
 # Domus
 
+![Domus Screenshot](https://raw.githubusercontent.com/aitorllj93/domus/main/docs/assets/domus-cover.png)
+
 Domus is a highly opitionated distribution of docker-compose files to deploy a home server with a single command.
 
 ## Features
