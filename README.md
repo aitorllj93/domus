@@ -1,6 +1,6 @@
 # Domus
 
-![Domus Screenshot](https://raw.githubusercontent.com/aitorllj93/domus/main/docs/assets/domus-cover.png)
+![Domus Screenshot](https://raw.githubusercontent.com/aitorllj93/domus/main/docs/assets/screenshots/heimdall-launcher.png)
 
 Domus is a highly opitionated distribution of docker-compose files to deploy a home server with a single command.
 
@@ -72,9 +72,11 @@ The docker-compose file is a standard docker-compose file with some extra featur
 
 ### Volumes
 
+All the volumes are mounted under the `/DATA` folder in the host machine.
+
 #### Config & Databases
 
-All the volumes are mounted under the `/DATA` folder in the host machine. Config and databases are stored in the `/DATA/AppData` folder, with the name of the service as the folder name.
+Config and databases are stored in the `/DATA/AppData` folder, with the name of the service as the folder name.
 
 #### Media
 
