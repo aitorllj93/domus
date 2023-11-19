@@ -1,0 +1,56 @@
+name: domus-home
+version: "3"
+services:
+  app:
+    container_name: domus-home
+    image: linuxserver/homeassistant:2023.11.2
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    volumes:
+      - type: bind
+        source: /DATA/AppData/homeassistant/config
+        target: /config
+    ports:
+      - target: 8123
+        published: 8123
+        protocol: tcp
+    x-domus:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+      volumes:
+        - container: /config
+          description:
+            en_us: Home Assistant config storage path.
+      ports:
+        - container: 8123
+          description:
+            en_us: Home Assistant web interface port.
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: "Visit homepage: https://github.com/orgs/linuxserver/packages/container/package/homeassistant"
+  tagline:
+    en_us: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+  developer: LinuxServer.io
+  author: WisdomSky
+  icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver-ls-logo.png
+  thumbnail: https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png
+  title:
+    en_us: Home
+  category: Productivity
+  project_url: https://www.home-assistant.io/
+  port_map: "8123"

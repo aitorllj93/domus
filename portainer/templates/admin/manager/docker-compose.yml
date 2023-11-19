@@ -1,0 +1,79 @@
+name: domus-manager
+version: "3"
+services:
+  app:
+    container_name: domus-manager
+    image: portainer/portainer-ce:2.19.1
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    network_mode: bridge
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    volumes:
+      - type: bind
+        source: /DATA/AppData/portainer
+        target: /data
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    ports:
+      - target: 8000
+        published: "8000"
+        protocol: tcp
+      - target: 9000
+        published: "9000"
+        protocol: tcp
+      - target: 9443
+        published: "9443"
+        protocol: tcp
+    x-domus:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+      volumes:
+        - container: /data
+          description:
+            en_us: Portainer data directory
+        - container: /var/run/docker.sock
+          description:
+            en_us: Docker socket
+      ports:
+        - container: "9000"
+          description:
+            en_us: Portainer Web UI Port
+        - container: "9443"
+          description:
+            en_us: Portainer Web UI Port(https)
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: Portainer is a lightweight management UI which allows you to easily manage your Docker environments. It is designed to be easy to use and offers full control over your Docker hosts and containers.
+  tagline:
+    en_us: Lightweight Docker management UI
+  developer: Portainer
+  author: Cp0204
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/screenshot-2.png
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/thumbnail.png
+  title:
+    en_us: Manager
+  category: Admin
+  project_url: https://www.portainer.io/
+  port_map: "9000"

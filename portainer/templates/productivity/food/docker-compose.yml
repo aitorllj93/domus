@@ -1,0 +1,74 @@
+name: domus-food
+version: "3"
+services:
+  app:
+    container_name: mealie
+    image: hkotel/mealie:omni-nightly
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      ALLOW_SIGNUP: true
+      BASE_URL: https://0.0.0.0
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mealie
+        target: /app/data/
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 9000
+        published: 9001
+        protocol: tcp
+    x-domus:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+        - container: ALLOW_SIGNUP
+          defaultValue: true
+          description:
+            en_us: allow users to sign up for an account
+        - container: BASE_URL
+          defaultValue: https://0.0.0.0
+          description:
+            en_us: specify a base url for the app to use, e.g. https://example.com/mealie
+      volumes:
+        - container: /app/data/
+          description:
+            en_us: application data
+      ports:
+        - container: 3000
+          description:
+            en_us: application port
+        - container: 9000
+          description:
+            en_us: application port
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor.
+  tagline:
+    en_us: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family.
+  developer: hkotel
+  author: WisdomSky
+  screenshot_link:
+    - https://nightly.mealie.io/assets/img/home_screenshot.png
+  icon: https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/Mealie-LZF8.png
+  thumbnail: https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/Mealie-LZF8.png
+  title:
+    en_us: Food
+  category: Productivity
+  project_url: https://mealie.io/
+  port_map: "3000"

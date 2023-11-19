@@ -1,0 +1,43 @@
+name: domus-media-provider-yt
+services:
+  app:
+    container_name: domus-media-provider-yt
+    image: alexta69/metube:2023-11-16
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DARK_MODE: true
+      AUDIO_DOWNLOAD_DIR: /audio
+    volumes:
+      - type: bind
+        source: /DATA/Media/Videos
+        target: /downloads
+      - type: bind
+        source: /DATA/Media/Music
+        target: /audio
+    ports:
+      - target: 8081
+        published: 8081
+        protocol: tcp
+    x-domus:
+      envs: []
+x-domus:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Web GUI for youtube-dl with playlist support. Allows you to download videos from YouTube and dozens of other sites (https://ytdl-org.github.io/youtube-dl/supportedsites.html).
+  tagline:
+    en_us: Web Gui For Youtube-dl With Playlist Support. Allows You To Download Videos From Youtube And Dozens Of Other Sites (https://ytdl-org.github.io/youtube-dl/supportedsites.html).
+  developer: ""
+  author: WisdomSky
+  icon: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
+  thumbnail: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
+  title:
+    en_us: Youtube Media Provider
+  category: Entertainment
+  port_map: "8081"

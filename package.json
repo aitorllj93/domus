@@ -1,0 +1,36 @@
+{
+  "name": "@central-factory/domus",
+  "version": "1.0.0",
+  "description": "The Docker Cloud Operating System for your home",
+  "main": "lib/node/index.js",
+  "bin": {
+    "domus": "bin/domus.js"
+  },
+  "keywords": [
+    "docker",
+    "cloud",
+    "operating",
+    "system",
+    "home",
+    "iot",
+    "raspberry",
+    "pi",
+    "media center",
+    "portainer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aitorllj93/domus.git"
+  },
+  "author": "Aitor Llamas Jiménez <aitorllj93@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aitorllj93/domus/issues"
+  },
+  "homepage": "https://github.com/aitorllj93/domus",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "enquirer": "^2.4.1",
+    "yaml": "^2.3.4"
+  }
+}
