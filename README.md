@@ -1,6 +1,25 @@
 # Domus
 
-The Docker Cloud Operating System for your home
+Domus is a highly opitionated distribution of docker-compose files to deploy a home server with a single command.
+
+## Features
+
+Some of the features included are:
+
+### Administration
+
+- [Portainer](https://www.portainer.io/) for managing the containers.
+- [Homarr](https://github.com/ajnart/homarr) for the dashboard/admin panel.
+- [Heimdall](https://heimdall.site/) for the home page.
+
+### Productivity
+
+- [Mealie](https://mealie.io/) for recipes and meal planning.
+
+### Entertainment
+
+- [Plex](https://www.plex.tv/) for media streaming.
+- [Calibre Web](https://github.com/janeczku/calibre-web) for ebooks and comics.
 
 ## Pre-requisites
 
