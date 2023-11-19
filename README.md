@@ -1,50 +1,38 @@
-# Tutorials
+# Domus
 
-## Docker Layer
+The Docker Cloud Operating System for your home
 
-- [Podman - Graphical Interfaces (for Terminal, Desktop and Server)](https://blog.while-true-do.io/podman-graphical-interfaces/)
-- [Cockpit](https://cockpit-project.org/)
-- [Podman](https://podman.io/)
-- [Lazytainer](https://github.com/vmorganp/Lazytainer)
+## Pre-requisites
 
-HomeLab
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Node.js >=18.16.0](https://nodejs.org/en/download/)
 
-Windows?
-Debian 12 (xfce)
-Elementary OS
+## Running Setup
 
-casaOS (UI on top of Linux) https://github.com/IceWhaleTech/CasaOS
+```sh
+npx @central-factory/domus
+# or
+npm i -g @central-factory/domus
+domus
+```
 
-- soporta Home Assistant (no up-to-date)
-- soporta Contenedores docker a mano
+## Custom Setup
 
-Bloqueadores de publicidad
+First of all, you need a copy of this repository.
 
-#### Home Assistant
+```sh
+npx degit aitorllj93/domus my-domus
+cd my-domus
+npm install
+npm link
+```
 
-https://www.home-assistant.io/installation/generic-x86-64/#install-dependencies
+You can modify the templates in `portainer/templates` folder to fit your needs.
+You can also customize the default applications to install in `lib/node/constants.js`.
 
-Use MariaDB
+Then, you can run the setup with:
 
-Home Assistant Supervisor (not compatible with Home Assistant Docker): https://www.home-assistant.io/integrations/hassio/
-Addons are Independent Applications (Docker).
-
-- **Editor**: Studio Code Server & File Editor
-- **Console**: Terminal & SSH
-- **Files**: Samba Share
-- **BackUps**: Duplicati | Google Drive Backup
-- **Upgrades**: Check Home Assistant Configuration
-- **Logs**: Log Viewer
-- **Automations**: Node-RED
-- **DNS**: Duck DNS
-- **Proxy**: NGINX SSL proxy | NGINX Proxy Manager
-- **VPN**: WireGuard | TailScale | ZeroTier
-- **Metrix**: InfluxDB | Grafana
-
-https://rclone.org/
-https://rclone.org/drive/
-https://rclone.org/dropbox/
-
-https://github.com/awesome-selfhosted/awesome-selfhosted#media-streaming---audio-streaming
-
-Mac OS Icons: https://macosicons.com/#/
+```sh
+domus
+```
