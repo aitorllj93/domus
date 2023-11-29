@@ -16,6 +16,9 @@ services:
         source: /DATA/AppData/calibre-web/config
         target: /config
       - type: bind
+        source: /DATA/AppData/calibre-web/overrides/caliBlur_override.css
+        target: /app/calibre-web/cps/static/css/caliBlur_override.css
+      - type: bind
         source: /DATA/Media/Books
         target: /books
     ports:
