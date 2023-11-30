@@ -75,3 +75,21 @@ services:
 # The default language to use for OCR. Set this to the language most of your
 # documents are written in.
 #PAPERLESS_OCR_LANGUAGE: eng
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: "Visit homepage: https://docs.paperless-ngx.com/"
+  tagline:
+    en_us: Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+  developer: paperless-ngx
+  author: paperless-ngx
+  icon: https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/dev/resources/logo/web/png/Color%20logo%20-%20no%20background.png
+  thumbnail: https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/dev/resources/logo/web/png/Color%20logo%20-%20no%20background.png
+  title:
+    en_us: Documents
+  category: Productivity
+  project_url: https://github.com/paperless-ngx/paperless-ngx
+  port_map: "8010"
