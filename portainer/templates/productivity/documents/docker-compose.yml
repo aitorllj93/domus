@@ -40,6 +40,7 @@ services:
       USERMAP_UID: $PUID
       USERMAP_GID: $PGID
   broker:
+    container_name: domus-documents-broker
     image: docker.io/library/redis:7
     restart: unless-stopped
     volumes:
@@ -48,6 +49,7 @@ services:
         target: /data
 
   db:
+    container_name: domus-documents-db
     image: docker.io/library/postgres:15
     restart: unless-stopped
     volumes:
