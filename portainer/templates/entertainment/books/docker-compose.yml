@@ -15,9 +15,8 @@ services:
       - type: bind
         source: /DATA/AppData/calibre-web/config
         target: /config
-      - type: bind
-        source: /DATA/AppData/calibre-web/overrides/caliBlur_override.css
-        target: /app/calibre-web/cps/static/css/caliBlur_override.css
+      - "/DATA/AppData/calibre-web/overrides/caliBlur_override.css:/app/calibre-web/cps/static/css/caliBlur_override.css"
+      - "/DATA/AppData/calibre-web/overrides/favicon.ico:/app/calibre-web/cps/static/favicon.ico"
       - type: bind
         source: /DATA/Media/Books
         target: /books

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const { Command } = require("commander");
-const { setup } = require("../lib/node/index.js");
+const { backup, setup } = require("../lib/node/index.js");
 const pkg = require("../package.json");
 const program = new Command();
 
@@ -14,5 +14,6 @@ program
   .option("-m, --mount-dir <dir>", "Mount directory")
   .action(setup);
 // program.command("install").description("Install Domus App").action(install);
+program.command("backup").description("Backup Domus").action(backup);
 
 program.parse();
