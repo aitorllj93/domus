@@ -1,0 +1,37 @@
+name: domus-bookmarks
+version: "3"
+services:
+  app:
+    container_name: domus-bookmarks
+    image: ghcr.io/go-shiori/shiori:latest
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    volumes:
+      - type: bind
+        source: /DATA/AppData/shiori/data
+        target: /shiori
+    ports:
+      - target: 8080
+        published: 8082
+        protocol: tcp
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: "Visit homepage: https://github.com/go-shiori/shiori"
+  tagline:
+    en_us: Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application. This application is distributed as a single binary, which means it can be installed and used easily.
+  developer: ghcr.io
+  author: go-shiori
+  icon: https://avatars.githubusercontent.com/u/41993376?s=48&v=4
+  thumbnail: https://avatars.githubusercontent.com/u/41993376?s=48&v=4
+  title:
+    en_us: Bookmarks
+  category: Productivity
+  project_url: https://github.com/go-shiori/shiori
+  port_map: "8082"

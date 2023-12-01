@@ -12,6 +12,7 @@ program
   .option("--base-url <url>", "Domus base url")
   .option("-a, --apps <names>", "Apps to install")
   .option("-m, --mount-dir <dir>", "Mount directory")
+  .option("-y, --yes", "Skip prompts")
   .action(setup);
 // program.command("install").description("Install Domus App").action(install);
 program.command("backup").description("Backup Domus").action(backup);

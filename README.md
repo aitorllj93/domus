@@ -16,12 +16,16 @@ Some of the features included are:
 
 ### Productivity
 
+- [Shiori](https://github.com/go-shiori/shiori) for bookmarks.
+- [Paperless](paperless-ngx.com) for documents.
 - [Mealie](https://mealie.io/) for recipes and meal planning.
+- [Home Assistant](https://www.home-assistant.io/) for home automation.
 
 ### Entertainment
 
 - [Plex](https://www.plex.tv/) for media streaming.
 - [Calibre Web](https://github.com/janeczku/calibre-web) for ebooks and comics.
+- [Audiobookshelf](https://www.audiobookshelf.org) for audiobooks and podcasts.
 
 ## Pre-requisites
 
@@ -36,6 +40,14 @@ npx @central-factory/domus
 # or
 npm i -g @central-factory/domus
 domus
+```
+
+## Installing Applications
+
+You can pass the -a flag to the setup command to directly install a set of applications.
+
+```sh
+domus -a Books,Audiobooks
 ```
 
 ## Custom Setup
@@ -82,7 +94,10 @@ Config and databases are stored in the `/DATA/AppData` folder, with the name of 
 
 Media is stored in the `/DATA/Media` folder, and structured based on the type of media.
 
+- `/DATA/Media/Audiobooks`
 - `/DATA/Media/Books`
+- `/DATA/Media/Documents`
 - `/DATA/Media/Movies`
 - `/DATA/Media/Music`
+- `/DATA/Media/Podcasts`
 - `/DATA/Media/TV Shows`
