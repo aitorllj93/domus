@@ -1,0 +1,46 @@
+name: domus-audios
+version: "3.7"
+services:
+  app:
+    container_name: domus-audios
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    volumes:
+      - type: bind
+        source: /DATA/AppData/audiobookshelf/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/audiobookshelf/metadata
+        target: /metadata
+      - type: bind
+        source: /DATA/Media/Audiobooks
+        target: /audiobooks
+      - type: bind
+        source: /DATA/Media/Podcasts
+        target: /podcasts
+    ports:
+      - target: 80
+        published: 13378
+        protocol: tcp
+x-domus:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: "Visit homepage: https://www.audiobookshelf.org/docs#intro"
+  tagline:
+    en_us: Self-hosted audiobook and podcast server
+  developer: ghcr.io
+  author: advplyr
+  icon: https://raw.githubusercontent.com/advplyr/audiobookshelf/master/images/banner.svg
+  thumbnail: https://raw.githubusercontent.com/advplyr/audiobookshelf/master/images/banner.svg
+  title:
+    en_us: Audios
+  category: Entertainment
+  project_url: https://github.com/advplyr/audiobookshelf
+  port_map: "13378"
