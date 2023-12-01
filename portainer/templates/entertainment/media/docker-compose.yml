@@ -130,6 +130,7 @@ x-domus:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png
   thumbnail: http://the-gadgeteer.com/wp-content/uploads/2015/10/plex-logo-e1446990678679.png
+  emoji: 📺
   title:
     en_us: Media
   category: Entertainment

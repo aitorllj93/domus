@@ -55,6 +55,7 @@ x-domus:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-icon.png
   thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-banner.png
+  emoji: 🚪
   title:
     en_us: Launcher
   category: Gateway

@@ -49,6 +49,7 @@ x-domus:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver-ls-logo.png
   thumbnail: https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png
+  emoji: 🏠
   title:
     en_us: Home
   category: Productivity

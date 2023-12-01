@@ -37,7 +37,8 @@ x-domus:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
   thumbnail: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
+  emoji: 📺
   title:
-    en_us: Youtube Media Provider
+    en_us: Media/Youtube
   category: Entertainment
   port_map: "8081"

@@ -67,6 +67,7 @@ x-domus:
   author: ajnart
   icon: https://homarr.dev/img/logo.svg
   thumbnail: https://homarr.dev/img/logo.svg
+  emoji: 📊
   title:
     en_us: Dashboard
   category: Admin

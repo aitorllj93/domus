@@ -1,31 +1,33 @@
 #!/usr/bin/env node
 const { Command } = require("commander");
-const { backup, processStatus, setup, stop } = require("../lib/node/index.js");
+const { add, backup, processStatus, remove } = require("../lib/node/index.js");
 const pkg = require("../package.json");
 const program = new Command();
 
 program.name("domus").description(pkg.description).version(pkg.version);
 
 program
-  .command("install", { isDefault: true })
-  .description("Install Domus")
+  .command("add", { isDefault: true })
+  .description("add Domus Apps")
+  .argument("[apps]", "Apps to add")
   .option("--base-url <url>", "Domus base url")
-  .option("-a, --apps <names>", "Apps to install")
   .option("-m, --mount-dir <dir>", "Mount directory")
   .option("-y, --yes", "Skip prompts")
-  .action(setup);
+  .action(add);
 
 program
-  .command("stop")
-  .description("Stop Domus Apps")
-  .option("-a, --apps <names>", "Apps to install")
+  .command("remove")
+  .alias("rm")
+  .description("Remove Domus Apps")
+  .argument("[apps]", "Apps to remove")
   .option("-y, --yes", "Skip prompts")
-  .action(stop);
+  .action(remove);
 
 program
   .command("status")
   .alias("ps")
   .description("Show Domus status")
+  .argument("[apps]", "Apps to inspect")
   .action(processStatus);
 
 program

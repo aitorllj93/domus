@@ -68,6 +68,7 @@ x-domus:
   developer: PhotoPrism
   author: CasaOS Team
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/icon.png
+  emoji: "🖼️ "
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/screenshot-1.jpg
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/screenshot-2.jpg

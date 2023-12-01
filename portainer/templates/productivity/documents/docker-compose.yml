@@ -90,6 +90,7 @@ x-domus:
   author: paperless-ngx
   icon: https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/dev/resources/logo/web/png/Color%20logo%20-%20no%20background.png
   thumbnail: https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/dev/resources/logo/web/png/Color%20logo%20-%20no%20background.png
+  emoji: 📃
   title:
     en_us: Documents
   category: Productivity

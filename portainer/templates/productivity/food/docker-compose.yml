@@ -2,7 +2,7 @@ name: domus-food
 version: "3"
 services:
   app:
-    container_name: mealie
+    container_name: domus-food
     image: hkotel/mealie:omni-nightly
     restart: unless-stopped
     environment:
@@ -67,6 +67,7 @@ x-domus:
     - https://nightly.mealie.io/assets/img/home_screenshot.png
   icon: https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/Mealie-LZF8.png
   thumbnail: https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/Mealie-LZF8.png
+  emoji: 🥘
   title:
     en_us: Food
   category: Productivity

@@ -67,6 +67,7 @@ x-domus:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-web-icon.png
   thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-web-icon.png
+  emoji: 📘
   title:
     en_us: Books
   category: Entertainment
