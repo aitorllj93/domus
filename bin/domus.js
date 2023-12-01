@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const { Command } = require("commander");
-const { backup, setup } = require("../lib/node/index.js");
+const { backup, processStatus, setup } = require("../lib/node/index.js");
 const pkg = require("../package.json");
 const program = new Command();
 
@@ -15,6 +15,15 @@ program
   .option("-y, --yes", "Skip prompts")
   .action(setup);
 // program.command("install").description("Install Domus App").action(install);
-program.command("backup").description("Backup Domus").action(backup);
+program
+  .command("status")
+  .alias("ps")
+  .description("Show Domus status")
+  .action(processStatus);
+program
+  .command("backup")
+  .alias("bk")
+  .description("Backup Domus")
+  .action(backup);
 
 program.parse();
